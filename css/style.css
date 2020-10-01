@@ -66,15 +66,19 @@ p{
     opacity: 1;
     width: 100%;
 }
+.navbar-links .fa-times{
+    display: none;
+}
+.btn-toggle{
+    display: none;
+}
 
-/*  section slider
+/*  slider
 ----------------------------------*/
 .slider{
     width: 100%;
     height: 120vh;
-    max-height: 130vh;
     position: relative;
-    overflow: hidden;
 }
 .slider::after{
     display: block;
@@ -86,9 +90,11 @@ p{
 }
 .img-banner{
     width: 100%;
+    height: 100%;
     position: absolute;
     opacity: 0;
     transition: opacity 900ms;
+    object-fit: cover;
 }
 .img-banner.selected{
     opacity: 1;
@@ -101,8 +107,8 @@ p{
 }
 .features-row{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(253px, 1fr));
+    grid-gap: 50px 30px;
 }
 .feature-box{
     background-color: #fff;
@@ -156,7 +162,7 @@ p{
 .about-row{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 40px 20px;
+    grid-gap: 80px 30px;
 }
 .about-img{
     text-align: center;
@@ -171,6 +177,11 @@ p{
 .about-text{
     margin: 20px 0;
 }
+.about-video iframe{
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+}
 
 /*  services
 ----------------------------------*/
@@ -180,7 +191,7 @@ p{
 }
 .services-row{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(257px, 1fr));
 }
 .service-box{
     padding: 20px;
@@ -214,7 +225,7 @@ p{
     margin-bottom: 0;
 }
 .banner-icon{
-    font-size: 45px;
+    font-size: 2.8em;
     padding: 5px 10px;
     width: 20%;
 }
@@ -313,7 +324,7 @@ p{
     outline: none;
     background-color: transparent;
     padding: 0 15px;
-    flex-grow: 1;
+    width: 100%;
 }
 .submit{
     background-image: linear-gradient(to right, #1c03b5, #5c8bef);
@@ -323,6 +334,7 @@ p{
     padding: 10px;
     cursor: pointer;
     outline: none;
+    width: 155px;
 }
 
 /*  footer
@@ -334,7 +346,7 @@ p{
 }
 .footer-row{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(162px, 1fr));
     grid-column-gap: 40px;
 }
 .footer-img{
@@ -366,4 +378,127 @@ p{
     text-align: center;
     color: #013f7e;
     margin-bottom: -80px;
+}
+
+/*  large device - desktop
+-----------------------------------*/
+@media screen and (max-width: 1024px){
+    /*  features
+    -------------------------------*/
+    .feature-title{
+        font-size: 1.3em;
+    }
+
+    /*  about
+    -------------------------------*/
+    .about-row{
+        grid-template-columns: 1fr;
+    }
+    .order{
+        order: -1;
+    }
+    .about-video{
+        text-align: center;
+    }
+
+    /*  banner
+    -------------------------------*/
+    .banner-column{
+        width: 70%;
+    }
+}
+
+/*  medium device - desktop - tablet
+-----------------------------------*/
+@media screen and (max-width: 960px){
+    /*  menu toggle
+    -------------------------------*/
+    .navbar-links{
+        position: absolute;
+        top: 0;
+        right: -300px;
+        background-color: #000;
+        flex-direction: column;
+        width: 300px;
+        height: 100vh;
+        padding: 30px 25px;
+        transition: all 0.3s ease;
+    }
+    .navbar-links .fa-times{
+        display: inline-block;
+        color: #fff;
+        margin-bottom: 80px;
+        padding: 5px;
+        font-size: 1.8em;
+        cursor: pointer;
+    }
+    .navbar-link{
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    .btn-toggle{
+        display: block;
+        color: #fff;
+        font-size: 2em;
+        cursor: pointer;
+    }
+    .open{
+        right: 0;
+    }
+
+    /*  services
+    -------------------------------*/
+    .service-box{
+        margin-bottom: 20px;
+    }
+    .service-box:last-child{
+        margin-bottom: 0;
+    }
+
+    /*  clients
+    -------------------------------*/
+    .clients-row{
+        grid-template-columns: 1fr;
+    }
+    .middle{
+        transform: translateY(0);
+    }
+}
+
+/*  medium device - tablet
+-----------------------------------*/
+@media screen and (max-width: 768px){
+    /*  features
+    -------------------------------*/
+    .features-row{
+        grid-template-columns: 1fr;
+    }
+
+    /*  banner
+    -------------------------------*/
+    .banner-column{
+        width: 100%;
+    }    
+    .banner-icon{
+        font-size: 2em;
+    }
+}
+
+/*  small device - mobile
+-----------------------------------*/
+@media screen and (max-width: 480px){
+    /*  about
+    -------------------------------*/
+    .about-video iframe{
+        height: 215px;
+    }
+
+    /*  banner
+    -------------------------------*/
+    .banner-box{
+        display: block;
+    }
+    .banner-content{
+        width: 100%;
+    }
 }
