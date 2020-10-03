@@ -87,7 +87,6 @@ p{
     width: 100%;
     height: 120vh;
     position: relative;
-    overflow-x: hidden;
 }
 .slider::after{
     display: block;
@@ -434,7 +433,7 @@ p{
     /*  menu toggle
     -------------------------------*/
     .navbar-links{
-        position: absolute;
+        position: fixed;
         top: 0;
         right: -250px;
         background-color: #000;
