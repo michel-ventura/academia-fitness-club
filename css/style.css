@@ -10,6 +10,9 @@ body{
     background-color: #fff;
     overflow-x: hidden;
 }
+section{
+    overflow-x: hidden;
+}
 ul{
     list-style-type: none;
 }
