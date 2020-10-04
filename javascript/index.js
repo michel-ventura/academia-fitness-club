@@ -60,7 +60,6 @@ const data12 = document.querySelector('[data-animation="12"]');
 const serviceRow = document.querySelector('.services-row');
 const clientsRow = document.querySelector('.clients-row');
 
-
 //  Event
 window.addEventListener('scroll', debounce(function(){
     animations();
