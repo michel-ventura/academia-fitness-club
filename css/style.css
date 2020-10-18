@@ -8,7 +8,6 @@
 }
 body{
     background-color: #fff;
-    overflow-x: hidden;
 }
 ul{
     list-style-type: none;
@@ -174,6 +173,7 @@ p{
 ----------------------------------*/
 .about-area{
     padding: 100px 0;
+    overflow-x: hidden;
 }
 .about-row{
     display: grid;
@@ -204,6 +204,7 @@ p{
 .services-area{
     padding: 80px 0;
     background-color: #efefef;
+    overflow-x: hidden;
 }
 .services-row{
     display: grid;
@@ -260,6 +261,7 @@ p{
 ----------------------------------*/
 .clients-area{
     padding: 100px 0;
+    overflow-x: hidden;
 }
 .clients-title, .clients-text{
     text-align: center;
@@ -413,8 +415,6 @@ p{
         grid-template-columns: 1fr;
     }
     .order{
-        -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
         order: -1;
     }
     .about-video{

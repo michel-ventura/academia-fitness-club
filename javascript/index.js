@@ -20,7 +20,7 @@ function nextImage(){
 function start(){
     setInterval(() => {
         nextImage();
-    }, 5000);
+    }, 3000);
 }
 
 
@@ -69,7 +69,7 @@ window.addEventListener('scroll', debounce(function(){
 function animations(){
     const pageTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
     
-    if(pageTop > data2.offsetTop){
+    if(pageTop > data1.offsetTop || pageTop > data2.offsetTop){
         gsap.to(data1, { duration: 1, x: 0, opacity: 1 });
         gsap.to(data2, { duration: 1, x: 0, opacity: 1 });
     }
