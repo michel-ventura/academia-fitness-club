@@ -93,7 +93,7 @@ function animations(){
     }
 
     if(pageTop > clientsRow.offsetTop){
-        if(window.pageXOffset + window.innerWidth <= 960){
+        if(window.pageXOffset + window.innerWidth <= 1280){
             gsap.to(data10, { duration: 1, y: 0, opacity: 1 });
         }else{
             gsap.to(data10, { duration: 1, y: -30, opacity: 1 });

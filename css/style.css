@@ -116,11 +116,13 @@ p{
     transform: translateY(-80px);
 }
 .features-row{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(253px, 1fr));
-    grid-gap: 50px 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .feature-box{
+    width: 310px;
+    margin: 0 15px 30px;
     background-color: #fff;
     -webkit-box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.2);
@@ -176,9 +178,13 @@ p{
     overflow-x: hidden;
 }
 .about-row{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 80px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col50{
+    width: 49%;
+    margin-bottom: 80px;
 }
 .about-img{
     text-align: center;
@@ -207,10 +213,12 @@ p{
     overflow-x: hidden;
 }
 .services-row{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(257px, 1fr));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .service-box{
+    width: 340px;
     padding: 20px;
 }
 .service-title{
@@ -275,11 +283,13 @@ p{
     margin: 20px 0 40px 0;
 }
 .clients-row{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .client-box{
+    width: 330px;
+    margin: 0 5px;
     padding: 10px 30px;
 }
 .text-view{
@@ -365,9 +375,12 @@ p{
     padding: 100px 0;
 }
 .footer-row{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(162px, 1fr));
-    grid-column-gap: 40px;
+    grid-column-gap: 40px; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .footer-img{
     width: 120px;
@@ -379,6 +392,10 @@ p{
 }
 .line-height{
     line-height: 1.8em;
+}
+.footer-box{
+    width: 215px;
+    margin: 0 20px;
 }
 .footer-box h1{
     color: #013f7e;
@@ -411,8 +428,8 @@ p{
 
     /*  about
     -------------------------------*/
-    .about-row{
-        grid-template-columns: 1fr;
+    .about-col50{
+        width: 100%;
     }
     .order{
         order: -1;
@@ -436,10 +453,10 @@ p{
     .navbar-links{
         position: fixed;
         top: 0;
-        right: -250px;
+        right: -280px;
         background-color: #000;
         flex-direction: column;
-        width: 250px;
+        width: 280px;
         height: 100vh;
         padding: 30px 25px;
         transition: all 0.3s ease;
@@ -479,8 +496,9 @@ p{
 
     /*  clients
     -------------------------------*/
-    .clients-row{
-        grid-template-columns: 1fr;
+    .client-box{
+        width: 100%;
+        margin: 0;
     }
     .middle{
         transform: translateY(0);
@@ -490,12 +508,6 @@ p{
 /*  medium device - tablet
 -----------------------------------*/
 @media screen and (max-width: 768px){
-    /*  features
-    -------------------------------*/
-    .features-row{
-        grid-template-columns: 1fr;
-    }
-
     /*  banner
     -------------------------------*/
     .banner-column{
