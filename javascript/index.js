@@ -63,7 +63,7 @@ const clientsRow = document.querySelector('.clients-row');
 //  Event
 window.addEventListener('scroll', debounce(function(){
     animations();
-}, 200));
+}, 100));
 
 //  Animation Function
 function animations(){
