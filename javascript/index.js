@@ -67,41 +67,44 @@ window.addEventListener('scroll', debounce(function(){
 
 //  Animation Function
 function animations(){
-    const pageTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
+    const fadeAnimation = document.querySelectorAll('.fade-in');
+    const topHeight = window.innerHeight * 0.7;
+
+    fadeAnimation.forEach(function(element, index){
+        if(element.getBoundingClientRect().top - topHeight < 0){
+            switch(index){
+                case 0:
+                    gsap.to(data1, { duration: 1, x: 0, opacity: 1 });
+                    gsap.to(data2, { duration: 1, x: 0, opacity: 1 });
+                    break;
+                case 1:
+                    gsap.to(data3, { duration: 1, x: 0, opacity: 1 });
+                    gsap.to(data4, { duration: 1, x: 0, opacity: 1 });
+                    break;
+                case 2:
+                    const timeLine = gsap.timeline();
+
+                    timeLine
+                        .to(data5, { duration: 1, x: 0, opacity: 1 })
+                        .to(data6, { duration: .5, x: 0, opacity: 1 });
+                    gsap.to(data7, { duration: 1, y: 0, opacity: 1 });
+                    break;
+                case 3:
+                    gsap.to(data8, { duration: 1, y: 0, opacity: 1 });
+                    break;
+                case 4:
+                    if(window.pageXOffset + window.innerWidth <= 1280){
+                        gsap.to(data10, { duration: 1, y: 0, opacity: 1 });
+                    }else{
+                        gsap.to(data10, { duration: 1, y: -30, opacity: 1 });
+                    }
     
-    if(pageTop > data1.offsetTop || pageTop > data2.offsetTop){
-        gsap.to(data1, { duration: 1, x: 0, opacity: 1 });
-        gsap.to(data2, { duration: 1, x: 0, opacity: 1 });
-    }
-
-    if(pageTop > data3.offsetTop){
-        gsap.to(data3, { duration: 1, x: 0, opacity: 1 });
-        gsap.to(data4, { duration: 1, x: 0, opacity: 1 });
-    }
-
-    if(pageTop > serviceRow.offsetTop){
-        const timeLine = gsap.timeline();
-
-        timeLine
-            .to(data5, { duration: 1, x: 0, opacity: 1 })
-            .to(data6, { duration: 1, x: 0, opacity: 1 });
-        gsap.to(data7, { duration: 1, y: 0, opacity: 1 });
-    }
-
-    if(pageTop > data8.offsetTop){
-        gsap.to(data8, { duration: 1, y: 0, opacity: 1 });
-    }
-
-    if(pageTop > clientsRow.offsetTop){
-        if(window.pageXOffset + window.innerWidth <= 1280){
-            gsap.to(data10, { duration: 1, y: 0, opacity: 1 });
-        }else{
-            gsap.to(data10, { duration: 1, y: -30, opacity: 1 });
+                    gsap.to(data9, { duration: 1, x: 0, opacity: 1 });
+                    gsap.to(data11, { duration: 1, x: 0, opacity: 1 });
+                    gsap.to(data12, { duration: 1.5, y: 0, opacity: 1 });
+            }
         }
-        gsap.to(data9, { duration: 1, x: 0, opacity: 1 });
-        gsap.to(data11, { duration: 1, x: 0, opacity: 1 });
-        gsap.to(data12, { duration: 1.5, y: 0, opacity: 1 });
-    }
+    });
 }
 
 animations();
