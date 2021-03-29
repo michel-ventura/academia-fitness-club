@@ -57,8 +57,6 @@ const data9 = document.querySelector('[data-animation="9"]');
 const data10 = document.querySelector('[data-animation="10"]');
 const data11 = document.querySelector('[data-animation="11"]');
 const data12 = document.querySelector('[data-animation="12"]');
-const serviceRow = document.querySelector('.services-row');
-const clientsRow = document.querySelector('.clients-row');
 
 //  Event
 window.addEventListener('scroll', debounce(function(){
