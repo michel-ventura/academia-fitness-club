@@ -468,7 +468,7 @@ p{
         color: #fff;
         margin-bottom: 80px;
         padding: 5px;
-        font-size: 1.8em;
+        font-size: 1.5em;
         cursor: pointer;
     }
     .navbar-link{
@@ -478,7 +478,7 @@ p{
     .btn-toggle{
         display: block;
         color: #fff;
-        font-size: 2em;
+        font-size: 1.5em;
         cursor: pointer;
     }
     .open{
