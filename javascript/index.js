@@ -66,7 +66,7 @@ window.addEventListener('scroll', debounce(function(){
 //  Animation Function
 function animations(){
     const fadeAnimation = document.querySelectorAll('.fade-in');
-    const topHeight = window.innerHeight * 0.7;
+    const topHeight = window.innerHeight * 0.75;
 
     fadeAnimation.forEach(function(element, index){
         if(element.getBoundingClientRect().top - topHeight < 0){
@@ -122,3 +122,6 @@ function debounce(func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	};
 };
+
+//  date
+document.querySelector('.year').innerHTML = new Date().getFullYear();
